@@ -1,0 +1,250 @@
+/* love-countdown — page-specific styles (built on css/theme.css) */
+
+.count-hero {
+  min-height: 560px;
+}
+
+/* ---- live stats ---- */
+.count-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 760px;
+  margin: 34px auto 0;
+}
+
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 12px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+}
+
+.stat-value {
+  display: block;
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--pink);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* ---- anniversary ring ---- */
+.ring-wrap {
+  position: relative;
+  width: min(280px, 78vw);
+  margin: 46px auto 8px;
+  aspect-ratio: 1;
+}
+
+.ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-track {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 12;
+}
+
+.ring-progress {
+  fill: none;
+  stroke: url(#ring-grad);
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-dasharray: 590.6;
+  stroke-dashoffset: 590.6;
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+.ring-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 34px;
+}
+
+.ring-days {
+  font-size: clamp(1.8rem, 8vw, 2.9rem);
+  font-weight: 800;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.ring-label {
+  color: var(--pink);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-top: 2px;
+}
+
+.ring-date {
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 8px;
+}
+
+.ring-wrap.is-anniversary .ring-days {
+  color: var(--pink-strong);
+}
+
+/* ---- milestones ---- */
+.milestone-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto 0;
+  max-width: 640px;
+  display: grid;
+  gap: 12px;
+}
+
+.milestone {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.milestone-mark {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.05rem;
+  border: 1px solid var(--line);
+}
+
+.milestone.reached .milestone-mark {
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: #10061f;
+  border-color: transparent;
+}
+
+.milestone-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.milestone-title {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.milestone-when {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.milestone-status {
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.milestone.reached .milestone-status {
+  color: var(--pink);
+}
+
+/* ---- settings ---- */
+.settings-card {
+  max-width: 640px;
+  margin: 22px auto 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.settings-title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.field {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.field > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font: inherit;
+  color-scheme: dark;
+}
+
+body.light-theme .field input {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.field input:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+}
+
+.settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.settings-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 14px 0 0;
+}
+
+@media (max-width: 560px) {
+  .count-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .milestone {
+    gap: 12px;
+  }
+
+  .milestone-status {
+    display: none;
+  }
+}

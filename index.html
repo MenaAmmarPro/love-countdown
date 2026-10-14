@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b20">
+  <meta name="description" content="Our little clock — every day, hour and heartbeat, counted just for Mena.">
+  <title>Our Time ✦ Love for Mena</title>
+  <link rel="canonical" href="https://ammar49-cyber.github.io/love-countdown/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Our Time — for Mena">
+  <meta property="og:title" content="Our Time ✦ Love for Mena">
+  <meta property="og:description" content="Every day, hour and heartbeat, counted just for Mena.">
+  <meta property="og:url" content="https://ammar49-cyber.github.io/love-countdown/">
+  <meta property="og:image" content="https://ammar49-cyber.github.io/love-countdown/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Our time together — a live counter for Mena">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Time ✦ Love for Mena">
+  <meta name="twitter:description" content="Every day, hour and heartbeat, counted just for Mena.">
+  <meta name="twitter:image" content="https://ammar49-cyber.github.io/love-countdown/assets/og-image.png">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Our Time">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">✦ Our Time</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="#together">Together</a>
+      <a href="#milestones">Milestones</a>
+      <a href="#settings">Settings</a>
+      <a href="https://ammar49-cyber.github.io/loveformymena/">Our little universe ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero count-hero">
+      <p class="eyebrow">EVERY SECOND, STILL YOU</p>
+      <div class="moon" aria-hidden="true">☾</div>
+      <p class="small-caption">A little clock that only counts one thing.</p>
+      <h1>Our time, <span id="hero-name">Mena.</span></h1>
+      <p class="hero-description">
+        However long it has been, it has never felt like enough — so here
+        it is, counted down to the second, just for you.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#together">See our time <span>♥</span></a>
+        <a class="button button-ghost" href="#settings">Set our date</a>
+      </div>
+      <p class="signature">Made with love, just for you <span>♥</span></p>
+    </section>
+
+    <section class="section" id="together">
+      <p class="eyebrow">TOGETHER FOR</p>
+      <h2>Every <span>little moment.</span></h2>
+      <p class="section-copy" id="since-line">Since the day it all began.</p>
+
+      <div class="count-stats">
+        <div class="stat-card">
+          <span class="stat-value" id="stat-days">0</span>
+          <span class="stat-label">days</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="stat-hours">00</span>
+          <span class="stat-label">hours</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="stat-minutes">00</span>
+          <span class="stat-label">minutes</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="stat-seconds">00</span>
+          <span class="stat-label">seconds</span>
+        </div>
+      </div>
+
+      <div class="ring-wrap">
+        <svg class="ring" viewBox="0 0 220 220" role="img" aria-labelledby="ring-title">
+          <title id="ring-title">Progress to our next anniversary</title>
+          <defs>
+            <linearGradient id="ring-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="var(--pink)"></stop>
+              <stop offset="100%" stop-color="var(--purple)"></stop>
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="110" cy="110" r="94"></circle>
+          <circle class="ring-progress" id="ring-progress" cx="110" cy="110" r="94"></circle>
+        </svg>
+        <div class="ring-center">
+          <span class="ring-days" id="countdown-days">—</span>
+          <span class="ring-label" id="countdown-label">days to go</span>
+          <span class="ring-date" id="countdown-date"></span>
+        </div>
+      </div>
+      <p class="center-link"><a href="#add-calendar" id="add-calendar-link">Add our anniversary to my calendar →</a></p>
+    </section>
+
+    <section class="section" id="milestones">
+      <p class="eyebrow">LITTLE FINISH LINES</p>
+      <h2>Milestones <span>we keep reaching.</span></h2>
+      <p class="section-copy">Each one gets a quiet celebration.</p>
+      <ul class="milestone-list" id="milestones"></ul>
+    </section>
+
+    <section class="section" id="settings">
+      <p class="eyebrow">JUST FOR US</p>
+      <h2>Our <span>details.</span></h2>
+      <p class="section-copy">
+        Set the day we started and your name. It is saved on this device only —
+        nothing ever leaves your browser.
+      </p>
+
+      <div class="settings-card">
+        <label class="field">
+          <span>Our anniversary</span>
+          <input type="date" id="anniversary-input" aria-label="Our anniversary date">
+        </label>
+        <label class="field">
+          <span>Your name</span>
+          <input type="text" id="name-input" maxlength="40" placeholder="Mena" aria-label="Your name">
+        </label>
+        <div class="settings-actions">
+          <button class="button button-primary" id="save-settings" type="button">Save our date</button>
+          <button class="button button-ghost" id="add-calendar" type="button">Add to calendar (.ics)</button>
+          <button class="button button-ghost" id="share-button" type="button">Share this page</button>
+          <button class="button button-ghost" id="install-button" type="button" hidden>Install app</button>
+        </div>
+        <p class="settings-note" id="save-note" aria-live="polite"></p>
+      </div>
+
+      <div class="settings-card">
+        <h3 class="settings-title">Daily reminder</h3>
+        <p class="settings-note">
+          A gentle nudge to stop by, once a day. This works while a tab is open;
+          the calendar entry above works even when it is not.
+        </p>
+        <div class="settings-actions">
+          <button class="button button-ghost" id="enable-notifications" type="button">Enable reminder</button>
+          <button class="button button-ghost" id="disable-notifications" type="button">Turn off</button>
+        </div>
+        <p class="settings-note" id="notify-status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with care <span>♥</span> for Mena</p>
+    <p class="footer-small">A little universe of its own ✦</p>
+  </footer>
+</body>
+</html>
