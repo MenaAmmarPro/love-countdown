@@ -4,7 +4,7 @@ A private little clock: it counts every day, hour and heartbeat since you two
 started, counts down to each anniversary, and quietly celebrates your
 milestones. Part of the **Love for Mena** collection.
 
-**Live:** https://ammar49-cyber.github.io/love-countdown/
+**Live:** https://menaammarpro.github.io/love-countdown/
 
 ## What it does
 
@@ -48,4 +48,4 @@ Static site, deployed with GitHub Pages from `main`.
 ## License
 
 Creative Commons BY-NC-ND 4.0 — see [`LICENSE`](LICENSE).
-© 2026 Ammar (ammar49-cyber). Made with care for Mena.
+© 2026 Ammar (MenaAmmarPro). Made with care for Mena.
