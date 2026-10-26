@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE = "our-time-v1";
+const CACHE = "our-time-v2";
 
 const ASSETS = [
   "./",
